@@ -1,24 +1,42 @@
 local actions = require("telescope.actions")
-require('telescope').setup{
-  pickers = {
-    find_files = {
-      find_command = {"fdfind", "--type", "file"}
+require("telescope").setup({
+  defaults = {
+    vimgrep_arguments = {
+      "rg",
+      "-L",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
     },
-    buffers = {
-        initial_mode = "normal",
-        mappings = {
-            i = {
-                ["<C-d>"] = actions.delete_buffer,
-            },
-            n = {
-                ["dd"] = actions.delete_buffer,
-            }
-        }
+    prompt_prefix = " ",
+    selection_caret = "❯ ",
+    sorting_strategy = "ascending",
+    path_display = { "truncate" },
+    layout_strategy = "horizontal",
+    layout_config = {
+      horizontal = {
+        prompt_position = "top",
+        preview_width = 0.55,
+        results_width = 0.8,
+      },
     },
   },
-}
+  pickers = {
+    buffers = {
+      initial_mode = "normal",
+      mappings = {
+        i = {
+          ["<C-d>"] = actions.delete_buffer,
+        },
+        n = {
+          ["dd"] = actions.delete_buffer,
+        },
+      },
+    },
+  },
+})
 
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>f', builtin.find_files, {})
-vim.keymap.set('n', '<leader>b', builtin.buffers, {})
-vim.keymap.set('n', '<leader>p', builtin.lsp_document_symbols, {})
+require("telescope").load_extension("fzf")
