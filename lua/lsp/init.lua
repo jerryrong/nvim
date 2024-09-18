@@ -73,7 +73,6 @@ for _, server in ipairs({
   "pyright",
   "gopls",
   "rust_analyzer",
-  "null-ls",
 }) do
   require("lsp." .. server).setup(on_attach, capabilities)
 end

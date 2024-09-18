@@ -1,4 +1,5 @@
 require("options")
-require("plugins")
-require("lsp")
 require("mappings")
+require("lazy_setup")
+require("lsp")
+

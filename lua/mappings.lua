@@ -31,10 +31,3 @@ keymap.set("i", "<right>", "")
 -- Use left and right to switch buffers
 keymap.set("n", "<left>", ":bp<cr>")
 keymap.set("n", "<right>", ":bn<cr>")
-
--- Telescope --
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>f", builtin.find_files, {})
-vim.keymap.set("n", "<leader>b", builtin.buffers, {})
-vim.keymap.set("n", "<leader>fw", builtin.live_grep, {})
-vim.keymap.set("n", "<leader>p", builtin.lsp_document_symbols, {})
