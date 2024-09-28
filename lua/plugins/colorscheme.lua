@@ -12,4 +12,8 @@ return {
       vim.cmd("colorscheme kanagawa-lotus")
     end,
   },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+  },
 }

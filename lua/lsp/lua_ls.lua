@@ -1,9 +1,5 @@
 local M = {}
 
-local runtime_path = vim.split(package.path, ";")
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
-
 M.setup = function(on_attach, capabilities)
   require("lspconfig").lua_ls.setup({
     on_attach = on_attach,

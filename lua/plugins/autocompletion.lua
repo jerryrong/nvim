@@ -7,18 +7,6 @@ return {
   { "onsails/lspkind.nvim" },
 
   {
-    "folke/lazydev.nvim",
-    ft = "lua",
-    opts = {
-      library = {
-        { path = "luvit-meta/library", words = { "vim%.uv" } },
-      },
-    },
-  },
-
-  { "Bilal2453/luvit-meta", lazy = true },
-
-  {
     "williamboman/mason.nvim",
     config = function()
       require("mason").setup()
@@ -58,7 +46,6 @@ return {
             maxwidth = 50,
             mode = "symbol_text",
             menu = {
-              lazydev = "[Lazydev]",
               nvim_lsp = "[LSP]",
               nvim_lua = "[NvimLua]",
               luasnip = "[LuaSnip]",
@@ -77,7 +64,6 @@ return {
           documentation = cmp.config.window.bordered(border_opts),
         },
         sources = cmp.config.sources({
-          { name = "lazydev" },
           { name = "nvim_lsp" },
           { name = "nvim_lua" },
           { name = "luasnip" },
