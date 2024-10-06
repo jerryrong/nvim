@@ -8,17 +8,12 @@ M.setup = function(on_attach, capabilities)
       Lua = {
         runtime = {
           version = "LuaJIT",
-          path = runtime_path,
         },
         diagnostics = {
           globals = { "vim" },
         },
         workspace = {
           preloadFileSize = 350,
-          library = {
-            [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-            [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-          },
         },
         telemetry = { enable = false },
       },
